@@ -1,0 +1,33 @@
+{%- ########################################################################## 
+# Label: Logo slider
+# Returns: a string or an empty object(if nothing has been entered)
+# Filters: https://shopify.dev/api/liquid/objects#string 
+########################################################################## -%}
+{{ section.settings.logo_slider }} 
+
+{% schema %}
+  {
+  "name": "Code In Shopify Section",
+  "settings": [
+    {
+      "type": "html",
+      "id": "logo_slider",
+      "label": "Logo slider",
+      "default": "<style>\n      * {\n        margin: 0;\n        padding: 0;\n        box-sizing: border-box;\n      }\n\n      body {\n        background: #f2f2f2;\n      }\n\n      @keyframes slide {\n        from {\n          transform: translateX(0);\n        }\n        to {\n          transform: translateX(-100%);\n        }\n      }\n\n      .logos {\n        overflow: hidden;\n        padding: 60px 0;\n        background: white;\n        white-space: nowrap;\n        position: relative;\n      }\n\n      .logos:before,\n      .logos:after {\n        position: absolute;\n        top: 0;\n        width: 250px;\n        height: 100%;\n        content: \"\";\n        z-index: 2;\n      }\n\n      .logos:before {\n        left: 0;\n        background: linear-gradient(to left, rgba(255, 255, 255, 0), white);\n      }\n\n      .logos:after {\n        right: 0;\n        background: linear-gradient(to right, rgba(255, 255, 255, 0), white);\n      }\n\n      .logos-slide {\n        display: inline-block;\n        animation: 40s slide infinite linear; /*Change the seconds value to change the speed*/\n      }\n\n      .logos-slide img {\n        height: 50px;\n        margin: 0 40px;\n      }\n\n    </style>\n    <div class=\"logos\">\n      <div class=\"logos-slide\">\n        <!--Replace with your logos, then copy-paste so it's duplicated-->\n        <img src=\"./logos/3m.svg\" />\n        <img src=\"./logos/barstool-store.svg\" />\n        <img src=\"./logos/budweiser.svg\" />\n        <img src=\"./logos/buzzfeed.svg\" />\n        <img src=\"./logos/forbes.svg\" />\n        <img src=\"./logos/macys.svg\" />\n        <img src=\"./logos/menshealth.svg\" />\n        <img src=\"./logos/mrbeast.svg\" />\n      </div>\n\n      <div class=\"logos-slide\">\n        <!--The contents of this div must be identical to the one above-->\n        <img src=\"./logos/3m.svg\" />\n        <img src=\"./logos/barstool-store.svg\" />\n        <img src=\"./logos/budweiser.svg\" />\n        <img src=\"./logos/buzzfeed.svg\" />\n        <img src=\"./logos/forbes.svg\" />\n        <img src=\"./logos/macys.svg\" />\n        <img src=\"./logos/menshealth.svg\" />\n        <img src=\"./logos/mrbeast.svg\" />\n      </div>\n    </div>",
+      "placeholder": "Infinite logo slider",
+      "info": "Infinite customizable logo slider for @RaysisX (@AwMan3703 on replit.com)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Code In Shopify Section"
+    }
+  ]
+}  
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
